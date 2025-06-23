@@ -1,0 +1,16 @@
+* {
+    font-family: PingFang SC, Microsoft YaHei, arial, STHeiTi, sans-serif
+}
+
+/*root选择器可用于定义变量*/
+:root {
+    --height: 100%;
+    --width: 100%;
+}
+
+html, body, #app {
+    height: var(--height);
+    width: var(--width);
+    margin: 0;
+    padding: 0;
+}
