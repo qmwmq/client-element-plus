@@ -9,7 +9,7 @@ defineProps<{
       <!--      <el-icon v-if="item.icon">-->
       <!--        <component :is="item.icon"/>-->
       <!--      </el-icon>-->
-      <span>{{ menu.name }}</span>
+      {{ menu.name }}
     </template>
     <qmw-menu-item v-for="child in menu.children"
                    :key="child.id"
@@ -20,7 +20,7 @@ defineProps<{
     <!--    <el-icon v-if="item.icon">-->
     <!--      <component :is="item.icon"/>-->
     <!--    </el-icon>-->
-    <span>{{ menu.name }}</span>
+    {{ menu.name }}
   </el-menu-item>
 </template>
 
