@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { JsonUtils } from 'qmwts'
 
 const modules = import.meta.glob('@/views/**/*.vue')
 
@@ -10,7 +11,8 @@ const router = createRouter({
   ]
 })
 
-export const addRouters = async (menus: any[]) => {
+export const addRouters = () => {
+  const menus = JsonUtils.parseArray<any>(localStorage.getItem('menus'))
   for (let menu of menus) {
     const { path, id } = menu as any
     if (!path || router.hasRoute(id)) continue
@@ -22,5 +24,6 @@ export const addRouters = async (menus: any[]) => {
     })
   }
 }
+addRouters()
 
 export default router

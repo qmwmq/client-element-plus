@@ -11,7 +11,8 @@ const activeMenuId = ref('')
 const menus = ref([])
 import('@/assets/menus.json').then(e => {
   menus.value = e.default as any
-  addRouters(menus.value)
+  localStorage.setItem('menus', JSON.stringify(menus.value))
+  addRouters()
 })
 </script>
 <template>
