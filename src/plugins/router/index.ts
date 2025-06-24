@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const modules = import.meta.glob('@/apps/app1/views/**/*.vue')
+const modules = import.meta.glob('@/views/**/*.vue')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,7 +17,7 @@ export const addRouters = async (menus: any[]) => {
     router.addRoute('index', {
       path: '/index/' + path,
       name: id,
-      component: modules[`/views/${ path }.vue`],
+      component: modules[`/src/views/${ path }.vue`],
       meta: menu as any
     })
   }
